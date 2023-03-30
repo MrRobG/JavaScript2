@@ -4,6 +4,7 @@ import { Welcome, WelcomeTwo } from './components/Welcome';
 import Message from './Message';
 import Counter from './components/Counter';
 import FunctionClick from './components/FunctionClick';
+import ClassClick from './components/ClassClick';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Counter />
 
       <FunctionClick />
+      <ClassClick />
     </div>
   );
 }
