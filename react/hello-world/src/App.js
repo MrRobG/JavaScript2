@@ -5,11 +5,30 @@ import Message from './Message';
 import Counter from './components/Counter';
 import FunctionClick from './components/FunctionClick';
 import ClassClick from './components/ClassClick';
+import EventBind from './components/EventBind';
+import UserGreeting from './components/UserGreeting';
+import ParentComponent from './components/ParentComponent';
+import NameList from './components/NameList';
+import FragmentDemo from './components/FragmentDemo';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './components/Home';
+import Blogs from './components/Blogs';
+import Contact from './components/Contact';
 
 function App() {
   return (
-    <div>
-      <Greet firstname='Bryan' lastname='Hines'>
+    <div className='App'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Home />}></Route>
+            <Route path='blogs' element={<Blogs />}></Route>
+            <Route path='contact' element={<Contact />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      {/* <Greet firstname='Bryan' lastname='Hines'>
         <button>Click</button>
         <p>More text...</p>
       </Greet>
@@ -24,9 +43,9 @@ function App() {
       <WelcomeTwo firstname='Lydia' lastname='Smith' />
       <Message />
       <Counter />
-
+<FragmentDemo />
       <FunctionClick />
-      <ClassClick />
+      <ClassClick /> */}
     </div>
   );
 }
